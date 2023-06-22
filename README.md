@@ -1590,7 +1590,7 @@ msktutil --auto-update --verbose --computer-name proxy
 Agregar en `crontab`.
 
 ```bash
-nano /etc/crontrab
+nano /etc/crontab
 
 @midnight root msktutil --auto-update --computer-name proxy > /dev/null 2>&1
 ```
