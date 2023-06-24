@@ -96,9 +96,8 @@ destino de email; sino que está enfocada en exponer la integración de servicio
 
 Tendiendo en cuenta esto, se pautan las siguientes premisas:
 
-* Sistema Operativo: Debian GNU/Linux 10/11 (instalación base)
-* Repositorio de paquetes distribución Debian GNU/Linux 10/11
-* Repositorio de paquetes Samba 4.9.6
+* Sistema Operativo: Debian GNU/Linux 11 (instalación base)
+* Repositorio de paquetes distribución Debian GNU/Linux 11
 * Existencia de un servidor NTP superior
 * Existencia de un servidor proxy padre
 * Nombre de host Samba AD DC: `dc`
