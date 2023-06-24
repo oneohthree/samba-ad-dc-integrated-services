@@ -646,7 +646,7 @@ update-policy {
 Reiniciar los servicios.
 
 ```bash
-systemctl restart logrotate samba-ad-dc named
+systemctl restart samba-ad-dc named
 systemctl enable named
 ```
 
