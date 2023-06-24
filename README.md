@@ -127,8 +127,6 @@ auto enp0s3
 iface enp0s3 inet static
     address 192.168.0.1/24
     gateway 192.168.0.254
-    dns-nameservers 127.0.0.1
-    dns-search example.tld
 ```
 
 ```bash
