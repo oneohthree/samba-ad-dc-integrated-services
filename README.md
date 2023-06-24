@@ -415,21 +415,6 @@ nano /etc/krb5.conf
     default_realm = EXAMPLE.TLD
     dns_lookup_realm = false
     dns_lookup_kdc = true
-
-[realms]
-    EXAMPLE.TLD = {
-        kdc = DC.EXAMPLE.TLD
-        master_kdc = DC.EXAMPLE.TLD
-        admin_server = DC.EXAMPLE.TLD
-        default_domain = example.tld
-    }
-
-[domain_realm]
-    .example.tld = EXAMPLE.TLD
-    example.tld = EXAMPLE.TLD
-
-[kdc]
-    check-ticket-addresses = false
 ```
 
 Iniciar, verificar el estado y habilitar el servicio de Samba AD DC.
@@ -499,7 +484,6 @@ Editar el fichero `/etc/samba/smb.conf` y en la sección `[global]` añadir las 
 
 ```bash
 server services = -dns
-nsupdate command = /usr/bin/nsupdate -g
 ```
 
 Comentar ó eliminar la directiva `dns forwarder = 127.0.0.1`.
@@ -515,15 +499,16 @@ mv /etc/bind/named.conf.local{,.org}
 ```bash
 nano /etc/bind/named.conf.local
 
-dlz "samba4" {
+dlz "domain.tld" {
     database "dlopen /usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_10.so";
 };
 ```
 
+Los siguientes comandos crean una cuenta en el servidor AD para el servidor Bind. Esto no es necesario si no se desea actualizaciones dinámicas.
+
 ```bash
+mkdir /var/lib/samba/bind-dns/dns
 samba_upgradedns --dns-backend=BIND9_DLZ
-chgrp bind /var/lib/samba/private/dns.keytab
-chmod g+r /var/lib/samba/private/dns.keytab
 ```
 
 #### Configurar `Bind9`.
