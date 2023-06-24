@@ -1,4 +1,4 @@
-# Guía para la implementación de servicios integrados a Samba como Active Directory Domain Controller (Samba AD DC) en Debian 10/11
+# Guía para la implementación de servicios integrados a Samba como Active Directory Domain Controller (Samba AD DC) en Debian 11
 
 ## Autores
 
@@ -295,8 +295,6 @@ journalctl --since -1h -u systemd-timesyncd
 > **NOTA**: Es recomendable hacer coincidir la zona horaria de los `hosts` de acuerdo a la región en cuestión, ejecutando el comando `dpkg-reconfigure tzdata`. En plantillas de contenedores `Debian 9/10`, deben redefinirse los parámetros de idioma, mediante `dpkg-reconfigure locales` y luego de escoger el idioma de preferencia, ejecutar `locale-gen`, y reiniciar el `CT`. Para una mejor comprensión de los mensajes de error, se recomienda usar Inglés como el idioma predeterminado del sistema: `localectl set-locale LANG=en_US.UTF8`.
 
 ## Instalación y configuración de Samba como AD DC
-
-La distribución de Debian 10 cuenta en sus repositorios de paquetes con la versión de Samba 4.9.5, la cual no contiene algunas mejoras para la gestión de Unidades Organizativas mediante la herramienta `samba-tool`. Es por ello que se recomienda usar un repositorio de paquetes de la versión 4.9.6 o superior. En esta guía se usará el que proporciona el grupo francés [Tranquil IT Systems](http://samba.tranquil.it/debian/).
 
 ### Requerimientos de hardware
 
