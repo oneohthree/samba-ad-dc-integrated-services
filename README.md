@@ -314,13 +314,6 @@ unset DEBIAN_FRONTEND
 
 ### Preparación del aprovisionamiento
 
-Detener y deshabilitar todos los servicios relacionados con Samba.
-
-```bash
-systemctl stop samba-ad-dc smbd nmbd winbind bind9
-systemctl disable samba-ad-dc smbd nmbd winbind bind9
-```
-
 Opcionalmente se puede hacer una copia del archivo de configuración inicial de Samba ya que se sobrescribe durante el aprovisionamiento.
 
 ```bash
@@ -421,9 +414,10 @@ Iniciar, verificar el estado y habilitar el servicio de Samba AD DC.
 
 ```bash
 systemctl unmask samba-ad-dc
-systemctl start samba-ad-dc
-systemctl status samba-ad-dc
 systemctl enable samba-ad-dc
+systemctl disable samba winbind nmbd smbd
+systemctl mask samba winbind nmbd smbd
+systemctl status samba-ad-dc
 ```
 
 Evitar que la cuenta del usuario `Administrator` expire.
