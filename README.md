@@ -442,7 +442,7 @@ ping -c4 dc
 Solicitar ticket de Kerberos.
 
 ```bash
-kinit Administrator@EXAMPLE.TLD
+kinit Administrator
 ```
 
 Listar tickets de `kerberos` en caché.
