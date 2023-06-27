@@ -2608,7 +2608,7 @@ rootfs: local-lvm:vm-101-disk-0,size=10G
 searchdomain: example.tld
 swap: 1024
 lxc.cap.drop:
-lxc.cap.drop: mac_admin mac_override sys_module sys_rawio sys_time
+lxc.cap.drop: mac_admin mac_override sys_module sys_rawio
 ```
 
 La integración de los servicios descritos en esta guía, también son funcionales con el servicio de directorio `Active Directory` de Microsoft Windows.
