@@ -2591,7 +2591,7 @@ Los CT que ejecuten servicios que utilicen autenticación `kerberos`, deben crea
 
 En CT para que el servidor Samba AD DC funcione correctamente; además de lo descrito en el párrafo anterior, debe activarse la característica `cifs`.
 
-Para un correcto funcionamiento del servidor `NTP` en CT se debe eliminar la restricción de acceso al reloj del sistema, editando el fichero de configuración del contendor y agregando las líneas `lxc.cap.drop:` y `lxc.cap.drop: mac_admin mac_override sys_module sys_rawio sys_time`, al final. Ejemplo:
+Para un correcto funcionamiento del servidor `NTP` en CT se debe eliminar la restricción de acceso al reloj del sistema, editando el fichero de configuración del contendor y agregando las líneas `lxc.cap.drop:` y `lxc.cap.drop: mac_admin mac_override sys_module sys_rawio`, al final. Ejemplo:
 
 ```bash
 nano /etc/pve/lxc/101.conf
